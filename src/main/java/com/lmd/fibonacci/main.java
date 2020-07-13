@@ -17,19 +17,51 @@ public class main {
     private IFibonacci Seriefibonacci;
 
     public static void main(String[] args) {
-        accueil();
+        IFibonacci.affichage();
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        switch (number) {
+            case 1:
+                afficheFibonacci();
+                break;
+            case 2:
+                System.out.println(sontSuiteFibonacci());
+                break;
+            default:
+                System.out.println("Au revoir");
+        }
 
     }
 
-    public static void accueil() {
+    public static void afficheFibonacci() {
 
-        IFibonacci.affichage();
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir un nombre :");
         int number = sc.nextInt();
         for (int i = 1; i <= number; i++) {
             System.out.println(IFibonacci.fibonacci(i));
         }
+
+    }
+
+    public static int sontSuiteFibonacci() {
+        int pgcd = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez saisir 1er nombre :");
+        int n1 = sc.nextInt();
+
+        Scanner _sc = new Scanner(System.in);
+
+        System.out.println("Veuillez saisir 2er nombre :");
+        int n2 = sc.nextInt();
+
+        for (int i = 1; i <= n1 && i <= n2; i++) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                pgcd = i;
+            }
+        }
+
+        return (pgcd == 1 ? 1 : 0);
 
     }
 
