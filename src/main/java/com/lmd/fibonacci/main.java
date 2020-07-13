@@ -49,9 +49,6 @@ public class main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir 1er nombre :");
         int n1 = sc.nextInt();
-
-        Scanner _sc = new Scanner(System.in);
-
         System.out.println("Veuillez saisir 2er nombre :");
         int n2 = sc.nextInt();
 
